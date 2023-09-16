@@ -43,7 +43,7 @@ function handleEventCreate() {
         location: eventLocation
     };
 
-    const outing = new Outing(eventDate, eventTime, eventCoordinator, eventCost, eventContact, eventLocation, eventRsvp, eventInvitees,eventTags);
+    const outing = new Outing(eventDate, eventTime, eventCoordinator, eventCost, eventContact, eventLocation);
     console.log(outing);
 
     // Add the new event to the list
