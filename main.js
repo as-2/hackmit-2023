@@ -1,14 +1,14 @@
 class Outing {
     constructor(date, time, coordinator, cost, contact, location, rsvpBy, invitees, tags) {
-        this.date = date;
-        this.time = time;
-        this.coordinator = coordinator;
-        this.cost = cost;
-        this.contact = contact;
-        this.location = location;
-        this.rsvpBy = rsvpBy;
-        this.invitees = invitees;
-        this.tags = tags;
+        this.date = date || "2024-01-01";
+        this.time = time || "00:00";
+        this.coordinator = coordinator || "me";
+        this.cost = cost || "free";
+        this.contact = contact || "just pu";
+        this.location = location || "MIT";
+        this.rsvpBy = rsvpBy || "none";
+        this.invitees = invitees || "private";
+        this.tags = tags || "event";
     }
 }
 
@@ -24,12 +24,6 @@ class Profile {
     }
 }
 
- // Add a click event listener to the button
- document.getElementById('createEventButton').addEventListener('click', function () {
-    // Redirect to the makeevent.html page when the button is clicked
-    window.location.href = 'newevent.html';
-});
-
 
 // Function to create a new event
 function handleEventCreate() {
@@ -38,6 +32,9 @@ function handleEventCreate() {
     const eventDate = document.getElementById('eventDate').value;
     const eventTime = document.getElementById('eventTime').value;
     const eventLocation = document.getElementById('eventLocation').value;
+    const eventCost = document.getElementById("eventCost").value;
+    const eventCoordinator = document.getElementById("eventCoordinator").value;
+    const eventContact = document.getElementById("eventContact").value;
 
     // Create a new event object with date and time
     const newEvent = {
@@ -46,7 +43,8 @@ function handleEventCreate() {
         location: eventLocation
     };
 
-    const outing = new Outing(eventDate, eventTime, "me", );
+    const outing = new Outing(eventDate, eventTime, eventCoordinator, eventCost, eventContact, eventLocation, eventRsvp, eventInvitees,eventTags);
+    console.log(outing);
 
     // Add the new event to the list
     const eventList = document.getElementById('eventList');
