@@ -28,6 +28,8 @@
         <!-- Event items will be displayed here -->
     </ul>
 
+    <button id="returnHomeButton">Return to Home</button>
+
     <script>
         // Function to create a new event
         function handleEventCreate() {
@@ -56,6 +58,11 @@
             document.getElementById('eventTime').value = '';
             document.getElementById('eventLocation').value = '';
         }
+
+        document.getElementById('returnHomeButton').addEventListener('click', function () {
+            // Redirect to the home page when the button is clicked
+            window.location.href = 'home.html'; // Replace with the actual path to your home page
+        });
     </script>
 </body>
 </html>
