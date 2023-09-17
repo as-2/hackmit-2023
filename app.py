@@ -41,6 +41,28 @@ class User(db.Model, UserMixin):
   def check_password(self, password):
     return check_password_hash(self.password, password)
 
+
+class Event():
+  def __init__(self, date="2024-01-01", time="00:00", coordinator="Me", cost="Free", 
+               contact="123-456-7890", location="Unspecified", rsvpBy="None", invitees=[], tags=None):
+    self.date = date
+    self.time = time
+    self.coordinator = coordinator
+    self.cost = cost
+    self.contact = contact
+    self.location = location
+    self.rsvpBy = rsvpBy
+    if invitees == None:
+       self.invitees = []
+    else:
+      self.invitees = invitees
+    if tags == None:
+      self.tags = []
+    else:
+       self.tags = tags
+    self.tags = tags
+
+
 class SignUpForm(FlaskForm):
   username = StringField('Username', validators=[DataRequired()])
   email = StringField('Email', validators=[DataRequired(), Email()])
@@ -86,7 +108,7 @@ def login():
       if user and user.check_password(form.password.data):
         login_user(user)
 
-        session['user_id'] = user.id
+        session['user_name'] = user.username
         session['user_email'] = user.email
 
         return redirect(url_for('dashboard'))
@@ -106,6 +128,13 @@ def about():
 @app.route('/profile')
 def profile():
    return render_template('profile.html')
+
+
+@app.route('/logout')
+def logout():
+    # Clear the session data
+    session.clear()  # or session['user_id'] = None, etc.
+    return redirect(url_for('home'))
 
 
 
