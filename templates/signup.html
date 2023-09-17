@@ -1,6 +1,6 @@
 {% extends 'nav.html' %}
 {% block content %}
-<form method="post" action="{{ url_for('signup') }}">
+<form method="post" action="{{ url_for('signup') }}" class="container">
     {{ form.hidden_tag() }}
     
     <div class="form-group">

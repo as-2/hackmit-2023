@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, flash, redirect, render_template, url_for
+from flask import Flask, flash, redirect, render_template, url_for, session
 from flask_login import login_user, login_required, LoginManager, current_user, UserMixin
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -56,6 +56,7 @@ class LoginForm(FlaskForm):
 
 @app.route("/")
 def home():
+   session.get('user_id')
    return render_template("home.html")
 
 
@@ -81,11 +82,15 @@ def signup():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user and user.check_password(form.password.data):
-            login_user(user)
-            return redirect(url_for('dashboard'))
-        flash('Invalid email or password', 'danger')
+      user = User.query.filter_by(email=form.email.data).first()
+      if user and user.check_password(form.password.data):
+        login_user(user)
+
+        session['user_id'] = user.id
+        session['user_email'] = user.email
+
+        return redirect(url_for('dashboard'))
+      flash('Invalid email or password', 'danger')
     return render_template('login.html', form=form)
 
 @app.route('/new-event', methods=['GET'])
@@ -96,6 +101,11 @@ def new_event():
 @app.route('/about')
 def about():
    return render_template('about.html')
+
+
+@app.route('/profile')
+def profile():
+   return render_template('profile.html')
 
 
 

@@ -13,15 +13,21 @@
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
-          <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>
         </label>
         <label class="logo" href="/dashboard">DWORCA</label>
         <ul>
-          <li><a class="active" href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Feedback</a></li>
+            <li><a class="active" href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <!--<li><a href="#">Feedback</a></li>-->
+            
+            {% if session.get('user_id') %}
+                <li><a href="/profile">{{ session['user_id'] }}</a></li>
+            {% else %}
+                <li><a href="/">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
 
@@ -32,7 +38,7 @@
     <script>
         // Add a click event listener to the button
         document.getElementById('createEventButton').addEventListener('click', function () {
-            window.location.href = 'newevent.html';
+            window.location.href = '/new-event';
         });
     </script>
 

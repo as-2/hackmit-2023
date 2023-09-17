@@ -1,0 +1,12 @@
+# this is used to install the required packages
+
+os
+
+flask==2.3.3
+flask_login
+flask_sqlalchemy
+werkzeug.security
+
+flask_wtf
+wtforms
+wtforms.validators
