@@ -137,6 +137,10 @@ def logout():
     return redirect(url_for('home'))
 
 
+@app.route('/friends')
+def friends():
+   return render_template('user-friends.html')
+
 
 if __name__ == "__main__":
   app.run() 
