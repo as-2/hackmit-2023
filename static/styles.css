@@ -8,7 +8,12 @@ body {
 }
 
 button.btn-custom, input.btn-custom {
-    background-color: #E4B7B8;
+    background-color: #b254e1;
+    color: white;
+}
+
+button.btn-custom:hover, input.btn-custom:hover {
+  color: #b254e1;
 }
 
 .event {
@@ -23,14 +28,10 @@ button.btn-custom, input.btn-custom {
     flex: 1;
 }
 
-h3 {
-  color:#627C85;
-}
-
 .event-name {
     font-size: 20px;
     font-weight: bold;
-    color:#4EB8A5;
+    color:#4628df;
 }
 
 .event-info {
@@ -42,7 +43,7 @@ h3 {
     margin-left: 10px;
     width: 20px;
     height:20px;
-    accent-color:#E4B7B8;
+    accent-color:#b254e1;
 }
 
 .event-details a {
@@ -59,7 +60,7 @@ h3 {
   }
 
   nav{
-    background: #4EB8A5;
+    background: #4628df;
     height: 80px;
     width: 100%;
   }
@@ -88,7 +89,7 @@ h3 {
     text-decoration: none;
   }
   a.active, a:hover, a:active {
-    color: #E4B7B8;
+    color: #b254e1;
     transition: .5s;
   }
   .checkbtn{
