@@ -1,3 +1,5 @@
+{% extends 'nav.html' %}
+{% block content %}
 <form method="post" action="{{ url_for('signup') }}">
     {{ form.hidden_tag() }}
     
@@ -51,3 +53,4 @@
     
     <input type="submit" value="Sign Up">
 </form>
+{% endblock %}

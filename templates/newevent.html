@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create New Event</title>
-</head>
+{% extends 'nav.html' %}
+{% block content %}
 <body>
     <h1>Create a New Event</h1>
-    <form id="eventForm">
+    <form id="eventForm" action="{{ url_for('event-form') }}">
         <label for="eventName">Event Name:</label>
         <input type="text" id="eventName" required><br>
 
@@ -37,7 +32,7 @@
         <!-- Event items will be displayed here -->
     </ul>
 
-    <button id="returnHomeButton">Return to Home</button>
+    <button id="returnHomeButton">Return to Dashboard</button>
 
     <script src="main.js"></script>
     <script>
@@ -47,4 +42,4 @@
         });
     </script>
 </body>
-</html>
+{% endblock %}
