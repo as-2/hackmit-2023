@@ -1,6 +1,6 @@
 {% extends 'nav.html' %}
 {% block content %}
-<form method="post" action="{{ url_for('login') }}">
+<form method="post" action="{{ url_for('login') }}" class="container">
     {{ form.hidden_tag() }}
     
     <div class="form-group">
@@ -27,6 +27,7 @@
         {% endif %}
     </div>
     
-    <input type="submit" value="Login">
+    <!--i added the class "btn btn-custom" but tbh idk why it has no border anymore -alaysia-->
+    <input class="btn btn-custom" type="submit" value="Login">
 </form>
 {% endblock %}

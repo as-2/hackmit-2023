@@ -88,9 +88,14 @@ def login():
         flash('Invalid email or password', 'danger')
     return render_template('login.html', form=form)
 
-@app.route('/new-event')
+@app.route('/new-event', methods=['GET'])
 def new_event():
    return render_template("newevent.html")
+
+
+@app.route('/about')
+def about():
+   return render_template('about.html')
 
 
 

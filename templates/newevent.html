@@ -2,7 +2,7 @@
 {% block content %}
 <body>
     <h1>Create a New Event</h1>
-    <form id="eventForm" action="{{ url_for('event-form') }}">
+    <form id="eventForm">
         <label for="eventName">Event Name:</label>
         <input type="text" id="eventName" required><br>
 
@@ -25,6 +25,10 @@
         <input type="text" id="eventContact" required><br>
 
         <button type="button" onclick="handleEventCreate()">Create Event</button>
+        <!-- change button?
+            <button class="btn btn-custom" onclick="handleEventCreate">Create Event</button>
+        -->
+        
     </form>
 
     <h2>Event List</h2>

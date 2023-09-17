@@ -1,23 +1,25 @@
 {% extends 'nav.html' %}
 {% block content %}
 <body>
-    <h1>DWORCA</h1>
-    <h3>orca-strate events with your friends</h3>
-    <div class="button-container">
+    <div class="container">
+        <h1>DWORCA</h1>
+        <h3>orca-strate events with your friends</h3>
         <div class="button-container">
-            <button id="signup-button">Sign Up</button>
-            <button id="login-button">Login</button>
+            <div class="button-container">
+                <button class="btn btn-custom" id="signup-button">Sign Up</button>
+                <button class="btn btn-custom" id="login-button">Login</button>
+            </div>
+        
+            <script>
+                document.getElementById('signup-button').addEventListener('click', function() {
+                    window.location.href = '/signup'; // Navigate to the "/signup" URL
+                });
+        
+                document.getElementById('login-button').addEventListener('click', function() {
+                    window.location.href = '/login'; // Navigate to the "/login" URL
+                });
+            </script>
         </div>
-    
-        <script>
-            document.getElementById('signup-button').addEventListener('click', function() {
-                window.location.href = '/signup'; // Navigate to the "/signup" URL
-            });
-    
-            document.getElementById('login-button').addEventListener('click', function() {
-                window.location.href = '/login'; // Navigate to the "/login" URL
-            });
-        </script>
     </div>
 </body>
 {% endblock %}
