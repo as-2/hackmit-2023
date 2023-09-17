@@ -7,7 +7,7 @@ body {
     margin: 0 auto;
 }
 
-button.btn-custom {
+button.btn-custom, input.btn-custom {
     background-color: #E4B7B8;
 }
 
@@ -23,9 +23,14 @@ button.btn-custom {
     flex: 1;
 }
 
+h3 {
+  color:#627C85;
+}
+
 .event-name {
     font-size: 20px;
     font-weight: bold;
+    color:#4EB8A5;
 }
 
 .event-info {
@@ -35,6 +40,14 @@ button.btn-custom {
 
 .event-checkbox {
     margin-left: 10px;
+    width: 20px;
+    height:20px;
+    accent-color:#E4B7B8;
+}
+
+.event-details a {
+  text-decoration: none; /* Remove underline from anchor elements within .event-details */
+  color: inherit; /* Inherit the text color from parent element */
 }
 
 *{
@@ -74,7 +87,7 @@ button.btn-custom {
     text-transform: uppercase;
     text-decoration: none;
   }
-  a.active,a:hover{
+  a.active, a:hover, a:active {
     color: #E4B7B8;
     transition: .5s;
   }
